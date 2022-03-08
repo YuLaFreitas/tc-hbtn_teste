@@ -5,7 +5,6 @@ public class OperacaoBasicaTeste extends OperacaoBasica{
         try{
         assertEquals(7, sqr(49));
         }catch (AssertionError e){
-            e.getLocalizedMessage();
             return false;
         }
         return true;
@@ -17,7 +16,6 @@ public class OperacaoBasicaTeste extends OperacaoBasica{
                     "Numero válido, o numero é primo",
                     numero_primo(7));
         }catch (AssertionError e){
-            System.out.println(e.getLocalizedMessage());
             return false;
         }
         return true;
@@ -32,14 +30,12 @@ public class OperacaoBasicaTeste extends OperacaoBasica{
                 numero_primo(4)
         );
     }catch (AssertionError e){
-            System.out.println(e.getLocalizedMessage());
             return false;
     }
         return true;
     }
 
     public static boolean testar_primo_menor_zero(){
-
         try{
         assertEquals(
                 "Número invalido. Numero menor ou igual a 1 não é primo",
