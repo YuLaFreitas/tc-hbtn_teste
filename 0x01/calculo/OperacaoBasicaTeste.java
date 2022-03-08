@@ -1,10 +1,7 @@
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class OperacaoBasicaTeste extends OperacaoBasica{
-    @Test
     public static boolean testar_sqrt(){
         try{
         assertEquals(7, sqr(49));
@@ -15,7 +12,6 @@ public class OperacaoBasicaTeste extends OperacaoBasica{
         return true;
     }
 
-    @Test
     public static boolean testar_primo(){
         try {
             assertEquals(
@@ -29,7 +25,6 @@ public class OperacaoBasicaTeste extends OperacaoBasica{
 
     }
 
-    @Test
     public static boolean testar_nao_primo(){
 
         try{
