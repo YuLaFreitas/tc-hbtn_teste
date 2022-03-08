@@ -1,50 +1,24 @@
-import static junit.framework.TestCase.assertEquals;
-
 public class OperacaoBasicaTeste extends OperacaoBasica{
     public static boolean testar_sqrt(){
-        try{
-        assertEquals(7, sqr(49));
-        }catch (AssertionError e){
-            return false;
-        }
-        return true;
+        return sqr(49) == 7;
     }
 
     public static boolean testar_primo(){
-        try {
-            assertEquals(
-                    "Numero válido, o numero é primo",
+       return "Numero válido, o numero é primo".equals(
                     numero_primo(7));
-        }catch (AssertionError e){
-            return false;
-        }
-        return true;
-
     }
 
     public static boolean testar_nao_primo(){
 
-        try{
-        assertEquals(
-                "Número válido, mas o numero não é primo",
+                return "Número válido, mas o numero não é primo".equals(
                 numero_primo(4)
         );
-    }catch (AssertionError e){
-            return false;
-    }
-        return true;
     }
 
     public static boolean testar_primo_menor_zero(){
-        try{
-        assertEquals(
-                "Número invalido. Numero menor ou igual a 1 não é primo",
+       return "Número invalido. Numero menor ou igual a 1 não é primo".equals(
                 numero_primo(-2)
                     );
-        }catch (AssertionError e){
-            return false;
-        }
-        return true;
     }
 
     public static boolean testar_subtracao(){
