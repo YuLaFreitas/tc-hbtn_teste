@@ -1,5 +1,4 @@
-import static org.junit.jupiter.api.Assertions.*;
-
+import static junit.framework.TestCase.assertEquals;
 
 public class OperacaoBasicaTeste extends OperacaoBasica{
     public static boolean testar_sqrt(){
