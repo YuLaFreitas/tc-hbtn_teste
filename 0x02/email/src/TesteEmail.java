@@ -1,40 +1,25 @@
 package src;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import static src.Pessoa.emailValid;
+import org.junit.jupiter.api.Test;
 
 public class TesteEmail {
+    private static final Pessoa pessoa = new Pessoa();
     @Test
-    public static boolean testar_email_com_arroba(){
-            try{
+    void testar_email_com_arroba(){
                 assertTrue(
-                        emailValid("email_teste@dominio.com.br"));
-            }catch (AssertionError e){
-                return false;
-            }
-            return true;
+                        pessoa.emailValid("email_teste@dominio.com.br"));
     }
 
     @Test
-    public static boolean testar_email_sem_arroba(){
-        try{
+    void testar_email_sem_arroba(){
             assertFalse(
-                    emailValid("email_testedominio.com.br"));
-        }catch (AssertionError e){
-            return false;
-        }
-        return true;
+                    pessoa.emailValid("email_testedominio.com.br"));
     }
 
     @Test
-    public static boolean testar_email_mais_50_caracteres(){
-        try{
+    void testar_email_mais_50_caracteres(){
             assertEquals(false,
-                    emailValid("emailtestemuitolongonaodeveser_valido@dominio.com.br"));
-        }catch (AssertionError e){
-            return false;
-        }
-        return true;
+                    pessoa.emailValid("emailtestemuitolongonaodeveser_valido@dominio.com.br"));
     }
 }
