@@ -1,16 +1,16 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Date;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class PersonTest {
 
-    Person person;
+    private static final Person person = new Person();
 
     @BeforeEach
     public void setup(){
-        person = new Person();
         person.setName("Paul");
         person.setSurname("McCartney");
         person.setBithDate(Date.valueOf("2000-01-01"));
@@ -21,13 +21,13 @@ public class PersonTest {
 
     @Test
     void show_full_name(){
-        Assertions.assertEquals("Paul McCartney", person.fullname());
+        assertEquals("Paul McCartney", person.fullname());
     }
 
     @Test
     void test_calculateYearlySalary(){
         person.setSalary(1200);
-        Assertions.assertEquals(14400,person.calculateYearlySalary());
+        assertEquals(14400,person.calculateYearlySalary());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class PersonTest {
         person.setAnotherCompanyOwner(true);
         person.setSalary(100);
 
-        Assertions.assertTrue(person.isMEI());
+        assertTrue(person.isMEI());
     }
 
     @Test
@@ -49,7 +49,7 @@ public class PersonTest {
         person.setAnotherCompanyOwner(false);
         person.setSalary(5000);
 
-        Assertions.assertFalse(person.isMEI());
+        assertFalse(person.isMEI());
     }
 
 
