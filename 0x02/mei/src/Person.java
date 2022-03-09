@@ -12,11 +12,11 @@ public class Person {
 
     public Person(){}
 
-    public Person(String name, String surname, Date birthint, boolean anotherCompanyOwner, boolean pensioner,
+    public Person(String name, String surname, Date birthdate, boolean anotherCompanyOwner, boolean pensioner,
                   boolean publicServer) {
         this.name = name;
         this.surname = surname;
-        this.birthint = birthint;
+        this.bithDate = birthdate;
         this.anotherCompanyOwner = anotherCompanyOwner;
         Pensioner = pensioner;
         PublicServer = publicServer;
