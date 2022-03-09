@@ -10,6 +10,18 @@ public class Person {
     private boolean PublicServer = false;
     float salary;
 
+    public Person(){}
+
+    public Person(String name, String surname, Date birthint, boolean anotherCompanyOwner, boolean pensioner,
+                  boolean publicServer) {
+        this.name = name;
+        this.surname = surname;
+        this.birthint = birthint;
+        this.anotherCompanyOwner = anotherCompanyOwner;
+        Pensioner = pensioner;
+        PublicServer = publicServer;
+    }
+
     public String fullname(){
         return String.format("%s %s", this.name, this.surname);
     }
