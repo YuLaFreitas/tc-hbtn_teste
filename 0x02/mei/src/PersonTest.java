@@ -1,4 +1,7 @@
-import org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +13,7 @@ public class PersonTest {
 
     @BeforeEach
     public void setup(){
+
         person = new Person("Paul", "McCartney", Date.valueOf("2000-01-01"), true, true, true);
     }
 
@@ -27,21 +31,15 @@ public class PersonTest {
     @Test
     void person_is_MEI(){
 
-        person.setPensioner(true);
-        person.setPublicServer(true);
-        person.setAnotherCompanyOwner(true);
-        person.setSalary(100);
+        person.setPensioner(false);
+        person.setPublicServer(false);
+        person.setAnotherCompanyOwner(false);
 
         assertTrue(person.isMEI());
     }
 
     @Test
-    void person_is_not_MEI(){
-
-        person.setPensioner(false);
-        person.setPublicServer(false);
-        person.setAnotherCompanyOwner(false);
-        person.setSalary(5000);
+    void person_is_not_MEI() throws Exception{
 
         assertFalse(person.isMEI());
     }

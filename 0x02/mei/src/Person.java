@@ -14,6 +14,8 @@ public class Person {
 
     public Person(String name, String surname, Date birthdate, boolean anotherCompanyOwner, boolean pensioner,
                   boolean publicServer) {
+        super();
+
         this.name = name;
         this.surname = surname;
         this.bithDate = birthdate;
