@@ -1,3 +1,6 @@
+package src;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Person {
@@ -33,16 +36,13 @@ public class Person {
     }
 
     public boolean isMEI(){
-        int age = new Date().getYear() - getBithDate();
-        if(
-                (getSalary()*12) < 130000 &&
-                age > 18 &&
-                 isAnotherCompanyOwner() &&
-                isPensioner() &&
-                isPublicServer()){
-                    return true;
-        }
-        return false;
+        LocalDate current_date = LocalDate.now();
+
+        return (getSalary() *12 < 130000) &&
+                (current_date.getYear() - getBithDate()>18) &&
+                isAnotherCompanyOwner() == false &&
+                isPensioner() == false &&
+                isPublicServer() == false;
     }
 
     public String getName() {
