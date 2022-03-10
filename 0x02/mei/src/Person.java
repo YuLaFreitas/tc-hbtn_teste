@@ -4,7 +4,7 @@ public class Person {
 
     private String name;
     private String surname;
-    private Date bithDate;
+    private int bithDate;
     private boolean anotherCompanyOwner = false;
     private boolean Pensioner = false;
     private boolean PublicServer = false;
@@ -12,7 +12,7 @@ public class Person {
 
     public Person(){}
 
-    public Person(String name, String surname, Date birthdate, boolean anotherCompanyOwner, boolean pensioner,
+    public Person(String name, String surname, int birthdate, boolean anotherCompanyOwner, boolean pensioner,
                   boolean publicServer) {
         super();
 
@@ -33,13 +33,13 @@ public class Person {
     }
 
     public boolean isMEI(){
-        int age = new Date().getYear() - this.bithDate.getYear();
+        int age = new Date().getYear() - getBithDate();
         if(
                 (getSalary()*12) < 130000 &&
                 age > 18 &&
-                anotherCompanyOwner &&
-                Pensioner &&
-                PublicServer){
+                 isAnotherCompanyOwner() &&
+                isPensioner() &&
+                isPublicServer()){
                     return true;
         }
         return false;
@@ -61,11 +61,11 @@ public class Person {
         this.surname = surname;
     }
 
-    public Date getBithDate() {
+    public int getBithDate() {
         return bithDate;
     }
 
-    public void setBithDate(Date bithDate) {
+    public void setBithDate(int bithDate) {
         this.bithDate = bithDate;
     }
 

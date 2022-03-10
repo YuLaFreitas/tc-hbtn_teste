@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Date;
 
 public class PersonTest {
 
@@ -14,7 +13,7 @@ public class PersonTest {
     @BeforeEach
     public void setup(){
 
-        person = new Person("Paul", "McCartney", Date.valueOf("2000-01-01"), true, true, true);
+        person = new Person("Paul", "McCartney", 2000, true, true, true);
     }
 
     @Test
