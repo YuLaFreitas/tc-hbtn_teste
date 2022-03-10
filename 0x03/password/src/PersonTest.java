@@ -48,7 +48,7 @@ public class PersonTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"abC123456$", "abC123456$","Hbtn@1234", "Betty@1#2", "Hbtn@123"})
+    @ValueSource(strings = {"abC123456$","Hbtn@1234", "Betty@1#2", "Hbtn@123"})
     public void check_password_valid(String user){
         assertTrue(person.checkPassword(user));
     }
